@@ -18,8 +18,9 @@ after_script:
 env:
   global:
     - DATABASE_URL=postgres://postgres@localhost/evernode_test
-    - AWS_BUCKET=zoe-evernode-test
+    - AWS_BUCKET=chyld-evernode-test
+        - AWS_BUCKET=zoe-evernode-test
     # AWS_SECRET_ACCESS_KEY
-UiXgjJ/xXvV2nkL7NdfGiwesvt/4SSfrwMwDP8D1hIJkmSboCCCTU+BHlV9HfA7XHl4lbI49OM5jl1b2Qu4oXuImEp2XoRt8PP0NuDcKC6TzqocgO9VFOOIxhw1SczvYwiJEgzM5FC3rTu17AosHapgtlZs+YpJi2juEgCbqvww=
-# AWS_ACCESS_KEY_ID
-DHIklOj6KsDsDBcMUPxhgB1Tiol7ZtYymZpVtx5sYhII7drijfGos3i1aPCFaJkpIRVwknQViAmVner9J3ji1970xS1YhY4fdOx6RTIPDxBhz7DQik2u2Dse94tlId1mZn4Junun54y57zV2qC44HzPZToSMLwasm7s8GVB1LNU=
+    - secure: "UiXgjJ/xXvV2nkL7NdfGiwesvt/4SSfrwMwDP8D1hIJkmSboCCCTU+BHlV9HfA7XHl4lbI49OM5jl1b2Qu4oXuImEp2XoRt8PP0NuDcKC6TzqocgO9VFOOIxhw1SczvYwiJEgzM5FC3rTu17AosHapgtlZs+YpJi2juEgCbqvww="
+    # AWS_ACCESS_KEY_ID
+    - secure: "DHIklOj6KsDsDBcMUPxhgB1Tiol7ZtYymZpVtx5sYhII7drijfGos3i1aPCFaJkpIRVwknQViAmVner9J3ji1970xS1YhY4fdOx6RTIPDxBhz7DQik2u2Dse94tlId1mZn4Junun54y57zV2qC44HzPZToSMLwasm7s8GVB1LNU="
