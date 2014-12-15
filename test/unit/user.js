@@ -10,7 +10,7 @@ var expect     = require('chai').expect,
     lab        = exports.lab = Lab.script(),
     describe   = lab.describe,
     it         = lab.it,
-    before     = lab.before,
+    //before     = lab.before,
     beforeEach = lab.beforeEach,
     db         = h.getdb();
 
