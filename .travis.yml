@@ -12,7 +12,7 @@ script:
   - npm test
 before_script:
   -psql -c 'create database evernode_test;' -U postgres
-  -cd test/scripts; ./create-db.sh evernode_test; cd../..;
+  -cd test/scripts; ./create_db.sh evernode_test; cd../..;
 after_script:
   - npm run coveralls
 env:
