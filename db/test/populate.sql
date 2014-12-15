@@ -1,6 +1,6 @@
-insert into users (username,password, avatar, token) values ('a', 'b', 'c', 'd');
-insert into users (username,password, avatar, token) values ('a', 'b', 'c', 'd');
-insert into users (username,password, avatar, token) values ('a', 'b', 'c', 'd');
+insert into users (username,password, avatar, token) values ('a1', 'b', 'c', 'd');
+insert into users (username,password, avatar, token) values ('a2', 'b', 'c', 'd');
+insert into users (username,password, avatar, token) values ('a3', 'b', 'c', 'd');
 
 delete from users;
 
