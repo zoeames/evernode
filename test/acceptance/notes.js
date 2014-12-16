@@ -13,7 +13,7 @@ var expect     = require('chai').expect,
     beforeEach = lab.beforeEach,
     db         = h.getdb();
 
-describe('Users', function(){
+describe('Notes', function(){
   var cookie;
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
@@ -33,50 +33,18 @@ describe('Users', function(){
     });
   });
 
-  describe('post /register', function(){
-    it('should register a new User', function(done){
+  describe('post /notes', function(){
+    it('should add a new Note', function(done){
       var options = {
         method: 'post',
-        url: '/register',
-        payload:{
-          username: 'sam',
-          password: '456',
-          avatar:'http://images.apple.com/global/elements/flags/16x16/usa_2x.png'
-        }
-      };
-
-      server.inject(options, function(response){
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
-  });
-
-  describe('post /login', function(){
-    it('should login a User', function(done){
-      var options = {
-        method: 'post',
-        url: '/login',
-        payload:{
-          username: 'bob',
-          password: '123'
-        }
-      };
-
-      server.inject(options, function(response){
-        expect(response.result.username).to.equal('bob');
-        expect(response.statusCode).to.equal(200);
-        done();
-      });
-    });
-  });
-  describe('delete /logout', function(){
-    it('should logout a User', function(done){
-      var options = {
-        method: 'delete',
-        url: '/logout',
+        url: '/notes',
         headers:{
           cookie: cookie
+        },
+        payload:{
+          title: 'a',
+          body: 'b',
+          tags:'c,d,e'
         }
       };
 
@@ -86,11 +54,11 @@ describe('Users', function(){
       });
     });
   });
-  describe('get /status', function(){
-    it('should get status of a User', function(done){
+  describe('get /notes', function(){
+    it('should get all Notes', function(done){
       var options = {
         method: 'get',
-        url: '/status',
+        url: '/notes',
         headers:{
           cookie: cookie
         }
@@ -102,4 +70,22 @@ describe('Users', function(){
       });
     });
   });
+  describe('get /notes/count', function(){
+    it('should get all Notes', function(done){
+      var options = {
+        method: 'get',
+        url: '/notes/count',
+        headers:{
+          cookie: cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        expect(response.result.count).to.equal('0');
+        done();
+      });
+    });
+  });
+
 });
