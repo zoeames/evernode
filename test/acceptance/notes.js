@@ -11,10 +11,13 @@ var expect     = require('chai').expect,
     describe   = lab.describe,
     it         = lab.it,
     beforeEach = lab.beforeEach,
-    db         = h.getdb();
+    db         = h.getdb(),
+    fs         = require('fs');
 
 describe('Notes', function(){
-  var cookie, noteId;
+  var cookie,
+      noteId,
+      file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
       var options = {
@@ -111,6 +114,26 @@ describe('Notes', function(){
         url: '/notes/'+noteId,
         headers:{
           cookie: cookie
+        }
+      };
+
+      server.inject(options, function(response){
+        expect(response.statusCode).to.equal(200);
+        done();
+      });
+    });
+  });
+  describe('post /notes/:noteId/upload', function(){
+    it('should upload a photo to a note', function(done){
+      var options = {
+        method: 'post',
+        url: '/notes' + noteId + 'upload',
+        headers:{
+          cookie: cookie
+        },
+        payload:{
+          file: file,
+          filename: flag.png
         }
       };
 
