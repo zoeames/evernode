@@ -14,4 +14,4 @@ psql $1 -f ../../db/tables/notes_tags.sql
 psql $1 -f ../../db/functions/add_note.sql
 psql $1 -f ../../db/functions/nuke_note.sql
 psql $1 -f ../../db/functions/show_note.sql
-psql $1 -f ../../db/functions/query_note.sql
+psql $1 -f ../../db/functions/query_notes.sql

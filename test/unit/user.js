@@ -3,15 +3,15 @@
 'use strict';
 
 var expect     = require('chai').expect,
-    cp         = require('child_process'),
-    h          = require('../helpers/helpers'),
-    User       = require('../../server/models/user'),
-    Lab        = require('lab'),
-    lab        = exports.lab = Lab.script(),
-    describe   = lab.describe,
-    it         = lab.it,
-    beforeEach = lab.beforeEach,
-    db         = h.getdb();
+cp         = require('child_process'),
+h          = require('../helpers/helpers'),
+User       = require('../../server/models/user'),
+Lab        = require('lab'),
+lab        = exports.lab = Lab.script(),
+describe   = lab.describe,
+it         = lab.it,
+beforeEach = lab.beforeEach,
+db         = h.getdb();
 
 describe('User', function(){
   beforeEach(function(done){
@@ -47,13 +47,13 @@ describe('User', function(){
 
   describe('.login', function(){
     it('should login a User', function(done){
-      User.login({username:'bob', password:'1234'}, function(user){
+      User.login({username:'bob', password:'123'}, function(user){
         expect(user.username).to.equal('bob');
         done();
       });
     });
     it('should NOT login a User - bad username', function(done){
-      User.login({username:'wrong', password:'1234'}, function(user){
+      User.login({username:'wrong', password:'123'}, function(user){
         expect(user).to.be.undefined;
         done();
       });
