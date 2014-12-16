@@ -11,13 +11,10 @@ var expect     = require('chai').expect,
     describe   = lab.describe,
     it         = lab.it,
     beforeEach = lab.beforeEach,
-    db         = h.getdb(),
-    fs         = require('fs');
+    db         = h.getdb();
 
 describe('Notes', function(){
-  var cookie,
-      noteId,
-      file = fs.createReadStream(__dirname + '/../fixtures/flag.png');
+  var cookie, noteId;
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean-db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
       var options = {
