@@ -123,17 +123,16 @@ describe('Notes', function(){
       });
     });
   });
-  describe('post /notes/:noteId/upload', function(){
+  describe('post /notes/:noteId/upload-mobile', function(){
     it('should upload a photo to a note', function(done){
       var options = {
         method: 'post',
-        url: '/notes' + noteId + 'upload',
+        url: '/notes/' + noteId + '/upload-mobile',
         headers:{
           cookie: cookie
         },
         payload:{
-          file: file,
-          filename: flag.png
+          b64: 'abcd'
         }
       };
 
