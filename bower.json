@@ -2,7 +2,7 @@
   "name": "hapi-auth",
   "version": "0.0.0",
   "authors": [
-    "Chyld Medford <chyld.medford@gmail.com>"
+    "Zoe Ames <zoeames@gmail.com>"
   ],
   "main": "client/index.js",
   "license": "MIT",

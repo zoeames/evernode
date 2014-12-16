@@ -3,16 +3,16 @@
 'use strict';
 
 var expect     = require('chai').expect,
-cp         = require('child_process'),
-h          = require('../helpers/helpers'),
-Note       = require('../../server/models/note'),
-Lab        = require('lab'),
-lab        = exports.lab = Lab.script(),
-describe   = lab.describe,
-it         = lab.it,
-beforeEach = lab.beforeEach,
-db         = h.getdb(),
-fs         = require('fs');
+    cp         = require('child_process'),
+    h          = require('../helpers/helpers'),
+    Note       = require('../../server/models/note'),
+    Lab        = require('lab'),
+    lab        = exports.lab = Lab.script(),
+    describe   = lab.describe,
+    it         = lab.it,
+    beforeEach = lab.beforeEach,
+    db         = h.getdb(),
+    fs         = require('fs');
 
 describe('Note', function(){
   var noteId;
